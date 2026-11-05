@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Battle - Project Report & Documentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap');
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background-color: #f8fafc;
+      margin: 0;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 60px 50px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #0f172a;
+      border-bottom: 3px solid #7c3aed;
+      padding-bottom: 15px;
+      margin-top: 0;
+    }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #1e1b4b;
+      margin-top: 40px;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 8px;
+    }
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #312e81;
+      margin-top: 25px;
+    }
+    p, li {
+      font-size: 0.98rem;
+      color: #334155;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.95rem;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 12px 14px;
+      text-align: left;
+    }
+    th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+    }
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: #ede9fe;
+      color: #6d28d9;
+    }
+    .meta-box {
+      background: #f8fafc;
+      border-left: 4px solid #7c3aed;
+      padding: 18px 22px;
+      border-radius: 8px;
+      margin-bottom: 35px;
+      font-size: 0.95rem;
+    }
+    .print-btn {
+      display: inline-block;
+      background: #7c3aed;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-bottom: 25px;
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+    }
+    .print-btn:hover {
+      background: #6d28d9;
+    }
+    @media print {
+      body { background: #ffffff; padding: 0; }
+      .container { box-shadow: none; border: none; padding: 0; max-width: 100%; }
+      .print-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+    <h1>QUIZ BATTLE: Real-time Circular Turn-Based Multiplayer Quiz Platform</h1>
+    
+    <div class="meta-box">
+      <strong>Project Name:</strong> QUIZ BATTLE – Interactive Multiplayer & Circular Arena Platform<br>
+      <strong>Academic Year:</strong> 2026 – 2027<br>
+      <strong>Project Members:</strong> 1. B. Karthik Reddy &nbsp;|&nbsp; 2. E. Murali &nbsp;|&nbsp; 3. R. Harsha<br>
+      <strong>GitHub Repository:</strong> <a href="https://github.com/vu241fa04c65-murali/quizzbattle" target="_blank">https://github.com/vu241fa04c65-murali/quizzbattle</a><br>
+      <strong>Core Stack:</strong> Node.js, Express.js, React.js, Socket.IO, MongoDB Atlas (Cloud NoSQL)
+    </div>
+
+    <h2>1. Executive Summary & Abstract</h2>
+    <p>
+      Traditional online quiz applications operate primarily in a solitary, asynchronous format where users individually answer questions and compare static scores on a delayed leaderboard. <strong>Quiz Battle</strong> transforms online assessment into an immersive, synchronous, real-time multiplayer gaming experience inspired by broadcast quiz bowls and circular esports arenas.
+    </p>
+    <p>
+      The platform introduces a <strong>Circular Turn-Based Multiplayer Engine</strong> rendered on a circular gaming table where participants occupy designated visual seats around a central question dais. Operating over low-latency WebSockets (Socket.IO) backed by a persistent MongoDB Atlas cloud database, the system implements turn-based question rotation with sophisticated rules:
+    </p>
+    <ul>
+      <li><strong>Rule A (Correct Answer):</strong> Awards +2 marks, concludes the current question, and advances to the next question for the next participant in circular order.</li>
+      <li><strong>Rule B (Incorrect Answer):</strong> Deducts -1 mark, ends the current question, and assigns a new question to the next participant.</li>
+      <li><strong>Rule C (The Pass Rule):</strong> Awards 0 marks (no penalty), <strong>retains the exact same question</strong>, and passes the turn to the adjacent competitor. The question circulates until answered correctly or exhausted by all participants.</li>
+      <li><strong>Rule D (Universal Pass):</strong> If every player passes, the question is retired, and a fresh question is issued to the original starting player.</li>
+      <li><strong>Author Isolation:</strong> The quiz creator acts strictly as the <strong>Game Controller / Host</strong>, possessing administrative controls (Start, Pause, Resume, End Game) without participating as a competitor or polluting the player leaderboard.</li>
+    </ul>
+
+    <h2>2. Technology Stack</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>Technology</th>
+          <th>Purpose & Justification</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Frontend</strong></td>
+          <td>React.js (React 19), Tailwind CSS, Vite</td>
+          <td>Component-driven declarative UI, neon purple gaming theme, glowing avatars, dynamic countdown animations.</td>
+        </tr>
+        <tr>
+          <td><strong>Backend Runtime</strong></td>
+          <td>Node.js & Express.js (JavaScript/TypeScript)</td>
+          <td>High-performance event-driven REST API server handling authentication, room lobbies, and score calculations.</td>
+        </tr>
+        <tr>
+          <td><strong>Real-Time Engine</strong></td>
+          <td>Socket.IO / WebSockets</td>
+          <td>Persistent bidirectional WebSocket communication for synchronized 25s turn timers, circular rotations, and live lobby updates.</td>
+        </tr>
+        <tr>
+          <td><strong>Database</strong></td>
+          <td>MongoDB Atlas Cloud Database & Mongoose ODM</td>
+          <td>Elastic cloud NoSQL document database managing real-time dynamic CRUD operations for users, quizzes, questions, and leaderboards.</td>
+        </tr>
+        <tr>
+          <td><strong>Security & Auth</strong></td>
+          <td>Crypto (SHA-256) & JWT Session Tokens</td>
+          <td>Cryptographic password salting/hashing and secure stateless token validation.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>3. Gameplay Rules & Circular Rotation Matrix</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Rule</th>
+          <th>Trigger</th>
+          <th>Score</th>
+          <th>Question Action</th>
+          <th>Turn Progression</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Rule A</strong></td>
+          <td>Contender selects correct option</td>
+          <td><strong>+2 Marks</strong></td>
+          <td>Ends current question</td>
+          <td>Rotates to next player with a <strong>fresh question</strong>.</td>
+        </tr>
+        <tr>
+          <td><strong>Rule B</strong></td>
+          <td>Contender selects wrong option</td>
+          <td><strong>-1 Mark</strong></td>
+          <td>Ends current question</td>
+          <td>Rotates to next player with a <strong>fresh question</strong>.</td>
+        </tr>
+        <tr>
+          <td><strong>Rule C</strong></td>
+          <td>Contender clicks <strong>Pass</strong></td>
+          <td><strong>0 Marks</strong></td>
+          <td><strong>KEEPS SAME QUESTION</strong></td>
+          <td>Rotates to adjacent player with the <strong>same question</strong>.</td>
+        </tr>
+        <tr>
+          <td><strong>Rule D</strong></td>
+          <td>All contenders pass on question</td>
+          <td><strong>0 Marks</strong></td>
+          <td>Retires question</td>
+          <td>Rotates to initial player with a <strong>fresh question</strong>.</td>
+        </tr>
+        <tr>
+          <td><strong>Rule E</strong></td>
+          <td>25s timer expires without selection</td>
+          <td><strong>0 Marks</strong></td>
+          <td>Treated as Pass</td>
+          <td>Rotates to adjacent player with the same question.</td>
+        </tr>
+        <tr>
+          <td><strong>Rule F</strong></td>
+          <td>Host clicks Pause / Resume / End</td>
+          <td>N/A</td>
+          <td>Freezes/Terminates</td>
+          <td>Author moderates game lifecycle without participating.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>4. Database Collections (MongoDB Atlas)</h2>
+    <ul>
+      <li><strong>users:</strong> Stores registered contenders (id, username, email, passwordHash, avatar, title, createdAt).</li>
+      <li><strong>quizzes:</strong> Stores quiz metadata, host info, 5-character room code, and duration configurations.</li>
+      <li><strong>questions:</strong> Stores question texts, 4 multiple-choice options, and server-side correct answer keys.</li>
+      <li><strong>attempts:</strong> Records completed quiz attempts, breakdowns, marks, and percentage scores.</li>
+      <li><strong>leaderboards:</strong> Stores live rankings, calculated accuracy, battles won, and aggregate scores.</li>
+      <li><strong>roomgames:</strong> Persists multiplayer circular room sessions, participants, and historical logs.</li>
+    </ul>
+
+    <h2>5. Testing & Verification</h2>
+    <p>
+      The platform was rigorously evaluated against automated end-to-end suites:
+    </p>
+    <ul>
+      <li>✅ <strong>MongoDB Atlas CRUD:</strong> Zero mock users; real database registrations and live leaderboard updates verified.</li>
+      <li>✅ <strong>Circular Game Simulation:</strong> Tested Rule A (+2 marks), Rule B (-1 mark), Rule C (same question retention upon Pass), and Universal Pass under automated concurrency.</li>
+      <li>✅ <strong>Author Isolation:</strong> Confirmed quiz author never receives player questions and does not appear on contender leaderboards.</li>
+      <li>✅ <strong>Production Build:</strong> <code>npm run build</code> transforms 1708 modules cleanly with 0 errors.</li>
+    </ul>
+
+    <h2>6. Conclusion</h2>
+    <p>
+      Quiz Battle successfully replaces traditional static online forms with a broadcast-grade circular multiplayer battle arena. Backed by Node.js, Express, Socket.IO, React, and MongoDB Atlas, the system provides real-time responsiveness, robust anti-cheat protections, and a high-engagement learning experience.
+    </p>
+
+  </div>
+
+</body>
+</html>
