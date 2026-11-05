@@ -1,0 +1,6 @@
+{
+  "name": "Quiz Battle – Interactive Multiplayer Quiz Platform",
+  "description": "Play, compete, and win! Modern quiz battle platform with custom room codes, timed MCQ questions, live leaderboards, and user statistics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

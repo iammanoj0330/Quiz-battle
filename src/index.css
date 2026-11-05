@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #0b0720;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0a2e;
+}
+::-webkit-scrollbar-thumb {
+  background: #432874;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6d28d9;
+}
+
+/* Glow and gradient animation utility classes */
+.neon-glow-purple {
+  box-shadow: 0 0 25px rgba(147, 51, 234, 0.45);
+}
+
+.neon-glow-gold {
+  box-shadow: 0 0 25px rgba(234, 179, 8, 0.45);
+}
+
+.neon-border-purple {
+  border-color: #9333ea;
+  box-shadow: 0 0 15px rgba(147, 51, 234, 0.35);
+}
+
+.bg-purple-radial {
+  background: radial-gradient(circle at 50% 0%, #3b1464 0%, #150933 60%, #0b0720 100%);
+}

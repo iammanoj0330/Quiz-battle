@@ -1,0 +1,339 @@
+{
+  "users": [],
+  "quizzes": [
+    {
+      "id": "quiz_gk_101",
+      "title": "General Knowledge",
+      "description": "Test your world awareness, geography, history, and science trivia.",
+      "created_by": "admin",
+      "created_by_username": "Admin",
+      "room_code": "QZ101",
+      "time_limit_minutes": 5,
+      "created_at": "2026-10-30T08:57:57.507Z"
+    },
+    {
+      "id": "quiz_tech_102",
+      "title": "Tech Quiz",
+      "description": "Explore programming languages, computer systems, web tech, and AI.",
+      "created_by": "admin",
+      "created_by_username": "Admin",
+      "room_code": "QZ102",
+      "time_limit_minutes": 5,
+      "created_at": "2026-10-31T08:57:57.507Z"
+    },
+    {
+      "id": "quiz_sports_103",
+      "title": "Sports Quiz",
+      "description": "Challenge your knowledge in football, cricket, tennis, and Olympics.",
+      "created_by": "admin",
+      "created_by_username": "Admin",
+      "room_code": "QZ103",
+      "time_limit_minutes": 5,
+      "created_at": "2026-11-01T08:57:57.507Z"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q_gk_1",
+      "quiz_id": "quiz_gk_101",
+      "question_text": "Which is the largest planet in our Solar System?",
+      "option_a": "Earth",
+      "option_b": "Jupiter",
+      "option_c": "Mars",
+      "option_d": "Venus",
+      "correct_option": "B"
+    },
+    {
+      "id": "q_gk_2",
+      "quiz_id": "quiz_gk_101",
+      "question_text": "What is the capital of India?",
+      "option_a": "Mumbai",
+      "option_b": "New Delhi",
+      "option_c": "Kolkata",
+      "option_d": "Chennai",
+      "correct_option": "B"
+    },
+    {
+      "id": "q_gk_3",
+      "quiz_id": "quiz_gk_101",
+      "question_text": "Which ocean is the largest and deepest on Earth?",
+      "option_a": "Atlantic Ocean",
+      "option_b": "Indian Ocean",
+      "option_c": "Pacific Ocean",
+      "option_d": "Arctic Ocean",
+      "correct_option": "C"
+    },
+    {
+      "id": "q_gk_4",
+      "quiz_id": "quiz_gk_101",
+      "question_text": "Who painted the famous masterpiece Mona Lisa?",
+      "option_a": "Vincent van Gogh",
+      "option_b": "Pablo Picasso",
+      "option_c": "Leonardo da Vinci",
+      "option_d": "Michelangelo",
+      "correct_option": "C"
+    },
+    {
+      "id": "q_gk_5",
+      "quiz_id": "quiz_gk_101",
+      "question_text": "What chemical element has the symbol \"Au\"?",
+      "option_a": "Silver",
+      "option_b": "Gold",
+      "option_c": "Copper",
+      "option_d": "Platinum",
+      "correct_option": "B"
+    },
+    {
+      "id": "q_gk_6",
+      "quiz_id": "quiz_gk_101",
+      "question_text": "Which country is known as the Land of the Rising Sun?",
+      "option_a": "China",
+      "option_b": "South Korea",
+      "option_c": "Japan",
+      "option_d": "Thailand",
+      "correct_option": "C"
+    },
+    {
+      "id": "q_gk_7",
+      "quiz_id": "quiz_gk_101",
+      "question_text": "How many bones are in the adult human body?",
+      "option_a": "186",
+      "option_b": "206",
+      "option_c": "226",
+      "option_d": "256",
+      "correct_option": "B"
+    },
+    {
+      "id": "q_gk_8",
+      "quiz_id": "quiz_gk_101",
+      "question_text": "What is the fastest land animal in the world?",
+      "option_a": "Lion",
+      "option_b": "Cheetah",
+      "option_c": "Gazelle",
+      "option_d": "Peregrine Falcon",
+      "correct_option": "B"
+    },
+    {
+      "id": "q_gk_9",
+      "quiz_id": "quiz_gk_101",
+      "question_text": "In which year did the Apollo 11 mission land humans on the Moon?",
+      "option_a": "1965",
+      "option_b": "1969",
+      "option_c": "1971",
+      "option_d": "1975",
+      "correct_option": "B"
+    },
+    {
+      "id": "q_gk_10",
+      "quiz_id": "quiz_gk_101",
+      "question_text": "What is the hardest natural substance on Earth?",
+      "option_a": "Graphene",
+      "option_b": "Titanium",
+      "option_c": "Diamond",
+      "option_d": "Quartz",
+      "correct_option": "C"
+    },
+    {
+      "id": "q_tech_1",
+      "quiz_id": "quiz_tech_102",
+      "question_text": "What does HTML stand for in web development?",
+      "option_a": "HighText Machine Language",
+      "option_b": "HyperText Markup Language",
+      "option_c": "Hyperlink and Text Model Language",
+      "option_d": "Home Tool Markup Language",
+      "correct_option": "B"
+    },
+    {
+      "id": "q_tech_2",
+      "quiz_id": "quiz_tech_102",
+      "question_text": "Which programming language is predominantly used for styling web pages?",
+      "option_a": "CSS",
+      "option_b": "Python",
+      "option_c": "Java",
+      "option_d": "PHP",
+      "correct_option": "A"
+    },
+    {
+      "id": "q_tech_3",
+      "quiz_id": "quiz_tech_102",
+      "question_text": "Which company created the React.js frontend library?",
+      "option_a": "Google",
+      "option_b": "Microsoft",
+      "option_c": "Meta (Facebook)",
+      "option_d": "Apple",
+      "correct_option": "C"
+    },
+    {
+      "id": "q_tech_4",
+      "quiz_id": "quiz_tech_102",
+      "question_text": "What does SQL stand for in database architecture?",
+      "option_a": "Structured Query Language",
+      "option_b": "Simple Quick Language",
+      "option_c": "Standard Question Loop",
+      "option_d": "Sequential Query Logic",
+      "correct_option": "A"
+    },
+    {
+      "id": "q_tech_5",
+      "quiz_id": "quiz_tech_102",
+      "question_text": "Which protocol is used to secure web traffic with SSL/TLS encryption?",
+      "option_a": "HTTP",
+      "option_b": "HTTPS",
+      "option_c": "FTP",
+      "option_d": "SMTP",
+      "correct_option": "B"
+    },
+    {
+      "id": "q_tech_6",
+      "quiz_id": "quiz_tech_102",
+      "question_text": "What is the runtime environment that allows JavaScript to run on the server side?",
+      "option_a": "Node.js",
+      "option_b": "Docker",
+      "option_c": "Babel",
+      "option_d": "Webpack",
+      "correct_option": "A"
+    },
+    {
+      "id": "q_tech_7",
+      "quiz_id": "quiz_tech_102",
+      "question_text": "In Git, which command creates a new local branch and switches to it?",
+      "option_a": "git push",
+      "option_b": "git switch -c (or checkout -b)",
+      "option_c": "git commit -m",
+      "option_d": "git merge",
+      "correct_option": "B"
+    },
+    {
+      "id": "q_tech_8",
+      "quiz_id": "quiz_tech_102",
+      "question_text": "What is the time complexity of searching an element in a balanced Binary Search Tree?",
+      "option_a": "O(1)",
+      "option_b": "O(log n)",
+      "option_c": "O(n)",
+      "option_d": "O(n^2)",
+      "correct_option": "B"
+    },
+    {
+      "id": "q_tech_9",
+      "quiz_id": "quiz_tech_102",
+      "question_text": "Which Python web framework is known for \"The web framework for perfectionists with deadlines\"?",
+      "option_a": "Flask",
+      "option_b": "Django",
+      "option_c": "FastAPI",
+      "option_d": "Tornado",
+      "correct_option": "B"
+    },
+    {
+      "id": "q_tech_10",
+      "quiz_id": "quiz_tech_102",
+      "question_text": "What does API stand for in software systems?",
+      "option_a": "Application Programming Interface",
+      "option_b": "Advanced Processing Instruction",
+      "option_c": "Automated Program Integration",
+      "option_d": "App Protocol Interface",
+      "correct_option": "A"
+    },
+    {
+      "id": "q_sp_1",
+      "quiz_id": "quiz_sports_103",
+      "question_text": "Which country won the FIFA Men's World Cup in 2022 in Qatar?",
+      "option_a": "France",
+      "option_b": "Argentina",
+      "option_c": "Brazil",
+      "option_d": "Germany",
+      "correct_option": "B"
+    },
+    {
+      "id": "q_sp_2",
+      "quiz_id": "quiz_sports_103",
+      "question_text": "How many players are on the field for one team in a standard soccer match?",
+      "option_a": "9",
+      "option_b": "10",
+      "option_c": "11",
+      "option_d": "12",
+      "correct_option": "C"
+    },
+    {
+      "id": "q_sp_3",
+      "quiz_id": "quiz_sports_103",
+      "question_text": "In which sport is the prestigious \"Davis Cup\" contested?",
+      "option_a": "Golf",
+      "option_b": "Tennis",
+      "option_c": "Badminton",
+      "option_d": "Cricket",
+      "correct_option": "B"
+    },
+    {
+      "id": "q_sp_4",
+      "quiz_id": "quiz_sports_103",
+      "question_text": "Who holds the world record for the 100-meter sprint at 9.58 seconds?",
+      "option_a": "Tyson Gay",
+      "option_b": "Usain Bolt",
+      "option_c": "Yohan Blake",
+      "option_d": "Carl Lewis",
+      "correct_option": "B"
+    },
+    {
+      "id": "q_sp_5",
+      "quiz_id": "quiz_sports_103",
+      "question_text": "How many overs does each team bowl in a standard T20 cricket match?",
+      "option_a": "15",
+      "option_b": "20",
+      "option_c": "25",
+      "option_d": "50",
+      "correct_option": "B"
+    },
+    {
+      "id": "q_sp_6",
+      "quiz_id": "quiz_sports_103",
+      "question_text": "Which city hosted the Summer Olympic Games in 2024?",
+      "option_a": "Tokyo",
+      "option_b": "Paris",
+      "option_c": "Los Angeles",
+      "option_d": "London",
+      "correct_option": "B"
+    },
+    {
+      "id": "q_sp_7",
+      "quiz_id": "quiz_sports_103",
+      "question_text": "In basketball, how many points is a shot made from beyond the arc worth?",
+      "option_a": "1 point",
+      "option_b": "2 points",
+      "option_c": "3 points",
+      "option_d": "4 points",
+      "correct_option": "C"
+    },
+    {
+      "id": "q_sp_8",
+      "quiz_id": "quiz_sports_103",
+      "question_text": "Which grand slam tennis tournament is played on traditional grass courts?",
+      "option_a": "Australian Open",
+      "option_b": "French Open",
+      "option_c": "Wimbledon",
+      "option_d": "US Open",
+      "correct_option": "C"
+    },
+    {
+      "id": "q_sp_9",
+      "quiz_id": "quiz_sports_103",
+      "question_text": "What is the highest possible break in a standard game of snooker?",
+      "option_a": "147",
+      "option_b": "150",
+      "option_c": "155",
+      "option_d": "180",
+      "correct_option": "A"
+    },
+    {
+      "id": "q_sp_10",
+      "quiz_id": "quiz_sports_103",
+      "question_text": "Which country invented the modern sport of curling?",
+      "option_a": "Canada",
+      "option_b": "Scotland",
+      "option_c": "Norway",
+      "option_d": "Sweden",
+      "correct_option": "B"
+    }
+  ],
+  "attempts": [],
+  "leaderboard": []
+}
