@@ -11,6 +11,7 @@ import mongoose, { Schema } from "mongoose";
 import crypto from "crypto";
 import fs from "fs";
 import path from "path";
+import dns from "dns";
 var UserSchema = new Schema({
   id: { type: String, required: true, unique: true },
   username: { type: String, required: true, unique: true, trim: true },
@@ -272,6 +273,10 @@ var MongoDatabaseManager = class {
       connectTimeoutMS: 2e4
     };
     console.log(`\u{1F50C} [MongoDB] Connecting to database: ${connectionString.split("@")[1] ? "MongoDB Atlas Cluster (" + connectionString.split("@")[1].split("/")[0] + ")" : connectionString}...`);
+    try {
+      dns.setServers(["8.8.8.8", "1.1.1.1"]);
+    } catch {
+    }
     for (let attempt = 1; attempt <= 4; attempt++) {
       try {
         await mongoose.connect(connectionString, connectionOptions);

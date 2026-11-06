@@ -2,6 +2,7 @@ import mongoose, { Schema, Document } from 'mongoose';
 import crypto from 'crypto';
 import fs from 'fs';
 import path from 'path';
+import dns from 'dns';
 
 // ----------------- INTERFACES -----------------
 
@@ -426,6 +427,12 @@ export class MongoDatabaseManager {
     };
 
     console.log(`🔌 [MongoDB] Connecting to database: ${connectionString.split('@')[1] ? 'MongoDB Atlas Cluster (' + connectionString.split('@')[1].split('/')[0] + ')' : connectionString}...`);
+
+    try {
+      dns.setServers(['8.8.8.8', '1.1.1.1']);
+    } catch {
+      // ignore
+    }
 
     for (let attempt = 1; attempt <= 4; attempt++) {
       try {
